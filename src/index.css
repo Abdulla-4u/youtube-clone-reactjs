@@ -1,0 +1,291 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+
+/* Light and Dark Mode Variables */
+:root {
+  --scrollbar-track-color-light: #F5F5F5;
+  --scrollbar-thumb-color-light: #ababab;
+  --scrollbar-track-color-dark: #0F0F0F;
+  --scrollbar-thumb-color-dark: #abababda;
+}
+
+/* Use body classes to toggle themes (e.g., .dark-mode for dark theme) */
+body.light-mode .sidebar {
+  --scrollbar-track-color: var(--scrollbar-track-color-light);
+  --scrollbar-thumb-color: var(--scrollbar-thumb-color-light);
+}
+
+body.dark-mode .sidebar {
+  --scrollbar-track-color: var(--scrollbar-track-color-dark);
+  --scrollbar-thumb-color: var(--scrollbar-thumb-color-dark);
+}
+
+/* Style for Scrollbar */
+.sidebar::-webkit-scrollbar {
+  width: 0; /* Hidden by default */
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out; 
+}
+
+.sidebar:hover::-webkit-scrollbar {
+  width: 6px; /* Show scrollbar on hover */
+}
+
+/* Customize the track */
+.sidebar::-webkit-scrollbar-track {
+  background: var(--scrollbar-track-color);
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Customize the thumb */
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color);
+  border-radius: 10px;
+  -webkit-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Thumb hover effect with transition */
+.sidebar:hover::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-color-hover, #abababc2);
+}
+
+
+.scrollbar-hide::-webkit-scrollbar{
+  display: none;
+}
+
+
+/* Show scrollbar with smooth transition on hover */
+@media (min-width: 768px){
+  .sidebar:hover::-webkit-scrollbar {
+    width: 6px; 
+    -webkit-transition: width 0.3s ease-in-out; 
+    transition: width 0.3s ease-in-out; 
+  }
+}
+
+
+/* Utilities */
+
+@layer utilities {
+  .animate-shimmer {
+    position: relative;
+    overflow: hidden;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0.1)), color-stop(50%, rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.1)));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background-size: 200% 100%;
+    -webkit-animation: shimmer 1.5s infinite;
+            animation: shimmer 1.5s infinite;
+  }
+
+  @-webkit-keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+}
+
+
+
+.category-active {
+  background-color: #1f2937 !important; 
+  color: #ffffff !important; 
+}
+.category-active:hover {
+  background-color: #111827 !important; 
+}
+
+.dark .category-active {
+  background-color: #fafafa !important; 
+  color: #111827 !important; 
+}
+.dark .category-active:hover {
+  background-color: #e5e7eb !important; 
+  color: #111827 !important;
+} 
+
+
+/* Spinner */
+
+.ui-loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-box-align: center; 
+      -ms-flex-align: center; 
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px; 
+  height: 40px; 
+}
+
+.loader-blk {
+  color: #3f51b5;
+  -webkit-animation: rotate-outer08 1.4s linear infinite;
+          animation: rotate-outer08 1.4s linear infinite;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.multiColor-loader {
+  display: block;
+  -webkit-animation: color-anim08 1.4s infinite;
+          animation: color-anim08 1.4s infinite;
+  width: 100%; 
+  height: 100%;
+}
+
+.loader-circle {
+  stroke: currentColor;
+}
+
+.MuiCircularProgress-circleStatic {
+  -webkit-transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  -o-transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.loader-circle-animation {
+  -webkit-animation: rotate-inner08 1.4s ease-in-out
+    infinite;
+          animation: rotate-inner08 1.4s ease-in-out
+    infinite;
+  stroke-dasharray: 80px, 200px;
+  stroke-dashoffset: 0;
+}
+
+@-webkit-keyframes rotate-outer08 {
+  0% {
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-outer08 {
+  0% {
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate-inner08 {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@keyframes rotate-inner08 {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@-webkit-keyframes color-anim08 {
+  0% {
+    color: #4285f4;
+  }
+
+  25% {
+    color: #ea4335;
+  }
+
+  50% {
+    color: #f9bb2d;
+  }
+
+  75% {
+    color: #34a853;
+  }
+}
+
+@keyframes color-anim08 {
+  0% {
+    color: #4285f4;
+  }
+
+  25% {
+    color: #ea4335;
+  }
+
+  50% {
+    color: #f9bb2d;
+  }
+
+  75% {
+    color: #34a853;
+  }
+}

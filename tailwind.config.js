@@ -1,0 +1,56 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      fontFamily: {
+        Oswald: ["Oswald", 'sans-serif'],
+      },
+      colors: {
+        light: {
+          background: "#fff",
+          primary: "#3EA6FF",
+          secondary: "#d4d4d8",
+          border: "#39434F",
+          muted: "#606060",
+          text: "#131313",
+          "text-secondary": "#888888",
+          "text-muted": "#606060", 
+          "text-subtle": "#9CA3AF",
+          heading: "#0F0F0F",
+          surface: "#F2F2F2",
+          "surface-alt": "#E5E5E5",
+          "surface-contrast": "#212121",
+          overlay: "#383838",
+          skeleton: "#F3F3F3", 
+          "skeleton-highlight": "#e0e0e0", 
+        },
+        dark: {
+          background: "#0F0F0F",
+          primary: "#3EA6FF",
+          secondary: "#272727",
+          border: "#1f26895e",
+          muted: "#A8A8A8",
+          text: "#F1F1F1",
+          "text-secondary": "#AAAAAA",
+          "text-muted": "#88888880",
+          "text-subtle": "#f1f1f1f4",
+          heading: "#F5F5F5",
+          surface: "#121212",
+          "surface-alt": "#222222",
+          "surface-contrast": "#ffffff1a",
+          overlay: "#3f3f3f88",
+          highlight: "#ffffff25",
+          elevated: "#263850",
+          skeleton: "#313131", 
+          "skeleton-highlight": "#494949", 
+        },
+      },
+    },
+  },
+  darkMode: 'class',
+  plugins: [],
+}
