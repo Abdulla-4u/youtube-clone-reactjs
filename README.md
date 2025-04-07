@@ -38,7 +38,7 @@ This YouTube Clone fetches real-time data from the **YouTube Data API v3**, allo
 
 ## 🌐 Live Demo
 
-🚀 [View Live Site](https://your-live-site-link.com)
+🚀 [View Live Site](https://spicytube.vercel.app)
 
 ---
 
@@ -51,7 +51,7 @@ This YouTube Clone fetches real-time data from the **YouTube Data API v3**, allo
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!  
-Feel free to [open an issue](https://github.com/your-username/youtube-clone/issues) or submit a pull request.
+Feel free to [open an issue](https://github.com/Abdulla-4u/youtube-clone-reactjs/issues) or submit a pull request.
 
 ---
 
